@@ -19,6 +19,36 @@ var isAnagram = function (s, t) {
   return true;
 };
 
-console.log(isAnagram("anagram", "nagaram"));
-console.log(isAnagram("rat", "car"));
-console.log(isAnagram("a", "ab"));
+// console.log(isAnagram("anagram", "nagaram"));
+// console.log(isAnagram("rat", "car"));
+// console.log(isAnagram("a", "ab"));
+
+
+var isAnagram2 = (s, t) => {
+  if (s.length != t.length) return false
+
+  const sStr = s.split('').sort().join('')
+  const tStr = t.split('').sort().join('')
+  return sStr == tStr
+}
+
+var isAnagram3 = (s, t) => {
+  if (s.length != t.length) return false
+
+  let sCount = {}
+  let tCount = {}
+
+  for (let i = 0; i < s.length; i++) {
+    sCount[s[i]] = (sCount[s[i]] || 0) + 1
+    tCount[t[i]] = (tCount[t[i]] || 0) + 1
+  }
+  
+  for (const key in sCount) {
+    if (sCount[key] !== tCount[key]) return false
+  }
+  return true
+}
+
+console.log(isAnagram3("anagram", "nagaram"));
+console.log(isAnagram2("rat", "car"));
+console.log(isAnagram2("a", "ab"));
