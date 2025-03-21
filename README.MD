@@ -125,3 +125,46 @@ Resources to practice leetcode:
 
 # 5. Loops & Recursive
     
+# 6. Functions & Scope
+## 6.1 Functions
+- there're 3 ways to declare a funciton
+- behind the scene: 
+    + allocation memory
+    + execution phase
+
+- var, setTimout, setInterval auto allocate in Global 
+- rest args in func
+
+## 6.2. Scope in JS
+- global: var, function declaration will be hosted in global scope
+- function: var
+- block: const, let
+- scope chain: priority order in scope: 
+    + block current => block nearest => script => global
+
+## 6.3 Closure
+
+## 6.4 Eecution context
+
+## 6.5 HOC
+
+## 6.6 Callback
+
+## 6.7 iife
+- immediately invoke function expression
+
+## 6.8 this Obj
+
+# 7. Async - sync
+- js is a single threaded, for long task (async task) will move to macro task to avoid blocking remaining tasks
+
+- promise.all, use promise.allSettled 
+
+- in promise chain, the 1 promise force resolve or reject, 
+- but from second promise: return value from promise 1 will success in promise 2
+- but from second promise: return Promise.reject from promise 1 will failed in promise 2
+
+- priority: promise > setTimeout(fn, 0) > 
+
+
+

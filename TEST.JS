@@ -32,30 +32,58 @@
 // arr[0] = action
 // console.log(arr)
 
-let rapper = {name: 'nhi'}
-rapper.name = 'update nhi'
-rapper['name'] = '33 nhi'
-console.log(rapper)
+// let rapper = {name: 'nhi'}
+// rapper.name = 'update nhi'
+// rapper['name'] = '33 nhi'
+// console.log(rapper)
 
-// Ex: draw object
-const sherlock = {
-  surname: 'home',
-  address: {city: 'London'}
-}
+// // Ex: draw object
+// const sherlock = {
+//   surname: 'home',
+//   address: {city: 'London'}
+// }
 
-const john = {
-  surname: 'Waston',
-  address: sherlock.address
-}
+// const john = {
+//   surname: 'Waston',
+//   address: sherlock.address
+// }
 
-john.surname = 'abc'
-john.address.city = 'lemon'
+// john.surname = 'abc'
+// john.address.city = 'lemon'
 
-// Isuue change value of address city of sherlock, use spread
-const clonedJohn = {
-  ...sherlock,
-  name: '',
-  address: {...sherlock.address, city: ''}
-}
+// // Isuue change value of address city of sherlock, use spread
+// const clonedJohn = {
+//   ...sherlock,
+//   name: '',
+//   address: {...sherlock.address, city: ''}
+// }
 
+// let sum = 0;
+// for (let i = 0; i < 5; i++) {
+//   for (let j = 0; j < 2; j++) {
+//     sum = sum + i + j;
+//     // continue; // 25
+//     // break; // 10
+//   }
+// }
 
+// console.log(sum);
+
+// const nums = [-2, 7, -4, 6];
+
+// function checkNumExist(nums, target) {
+//   nums.sort((a, b) => a - b);
+
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     let mid = Math.floor((left + right) / 2);
+//     if (nums[mid] === target) return "Found";
+//     else if (nums[mid] < target) left = mid;
+//     else right = mid - 1;
+//   }
+//   return "Not found";
+// }
+
+// console.log(checkNumExist(nums, -2));
+// console.log(checkNumExist(nums, -5));
