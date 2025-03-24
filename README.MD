@@ -166,5 +166,33 @@ Resources to practice leetcode:
 
 - priority: promise > setTimeout(fn, 0) > 
 
+# 8. Seft Assignment
+# 9. DSA
+## 9.1 DSA
+- Data structure: A way of organize and store data in computer for accesing and using effectively
+- Algorithm: a step of instructions to gude step by step to solve a specific problem
+- How does a computer store data?
+    - Register: directly assessed by CPU, cpu will get from Cache or Main Memory
+    - Cache: keep memory in Ram for acees quickly
+    - Main Memory: Ram - (capacity: storage for  active programs - watch in acitve monitor for Ram using/ RAM max)
+    - Electron Disk: SSD (used mostly) (volumn: storage permanent)
+    - Magnetic Disk: HDD (many years ago) (volumn: storage permanent) recently, most computer not use HDD anymore
 
+    Ex: this computer Ram : 16GB, 
+## 9.2 BigO Notation
+- 1: constant 
+- log(n): logarithm 
+- n: linear
+- nlog(n): log-linear
+- n^2: (quadratic) 
+- 2^n (expotential) not recommended
+- n! (worse) not recommended
+
+## 9.1 Data structure in use
+- How does array store in Ram? pro vs cons and compared to linked list
+    - array will create new address when add an element
+    - linked list will refer to a node when a, no need to create a new address
+## 9.1 Basic Algo
+    - Try BFS, DFS
+## 9.1 Q & A
 
