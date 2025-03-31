@@ -32,3 +32,6 @@ function findNum(arr, target) {
 console.log(findNum([-3, -2, 1, 3, 4, 7, 9], 4));
 console.log(findNum([-3, -2, 1, 3, 4, 7, 9], -2));
 console.log(findNum([-3, -2, 1, 3, 4, 7, 9], 5));
+
+
+

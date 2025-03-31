@@ -33,7 +33,29 @@ var isIsomorphic = function (s, t) {
   //   return true;
 };
 
-console.log(isIsomorphic("paper", "title"));
-console.log(isIsomorphic("foo", "bar"));
-console.log(isIsomorphic("egg", "add"));
-console.log(isIsomorphic("badc", "baba"));
+// console.log(isIsomorphic("paper", "title")); // true
+// console.log(isIsomorphic("foo", "bar")); // false
+// console.log(isIsomorphic("egg", "add")); // true
+// console.log(isIsomorphic("badc", "baba")); // false
+
+var isIsomorphic2 = function (s, t) {
+  if (s.length !== t.length) return false;
+
+  let map = {};
+
+  for (let i = 0; i < s.length; i++) {
+    if (map[s[i]] && map[s[i]] !== t[i]) {
+      return false;
+    } else if (!map[s[i]] && Object.values(map).includes(t[i])) {
+      return false;
+    }
+    map[s[i]] = t[i];
+  }
+
+  return true;
+};
+
+console.log(isIsomorphic2("paper", "title")); // true
+console.log(isIsomorphic2("foo", "bar")); // false
+console.log(isIsomorphic2("egg", "add")); // true
+console.log(isIsomorphic2("badc", "baba")); // false

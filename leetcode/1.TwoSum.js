@@ -76,7 +76,7 @@ var twoSum4 = (nums, target) => {
     }
 
     prevMap.set(nums[i], i);
-    console.log('pre', prevMap)
+    console.log("pre", prevMap);
   }
 
   return [];
