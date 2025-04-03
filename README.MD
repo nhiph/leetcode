@@ -237,6 +237,7 @@ Resources to practice leetcode:
 ## 10.2 Queue: order priority
 
 ## 10.3 Hash Table: set, map, O(1) for operatons add, delete, edit
+
 - Research Hash Table
 - Hash table has 3 components
   - key, hash function, bucket
@@ -244,33 +245,62 @@ Resources to practice leetcode:
 - Refer to Set vs Map in JS
 
 ## 10.4 Algorithm
+
     Binary search: O(logn) < Interpolation search O(log(logn))
 
-## 10.5 
+## 10.5
+
     - BFS: go to nearest node
     - DFS: first choose one direction => then go until can not process furthur
 
 ## 10.6
+
 - sliding window: keep moving follow fixed size until the end of the array, need to know the elements inside a range size
-- two pointers: 
-    - start/ end
-    - start/ start + n
+- two pointers:
+  - start/ end
+  - start/ start + n
 
 nab codility belt:
+
 - yellow: 2 easy 1 med
 - brown: 2 med
 - black: 1 hard
 
 # 11. REACT BASIC
-- load html one time for first time, then use update by state, load het logic js,... 
+
+- load html one time for first time, then use update by state, load het logic js,...
 - React is a Javascript library for building User Interface
 - DOM: Document Object Model
-- Engine:  Virtual Dom with React Reconcilation, compare which element different, Dom draw updated node, no need to render all dom tree
-- Vite: use rollup  to bundler - create react use wedpack
+- Engine: Virtual Dom with React Reconcilation, compare which element different, Dom draw updated node, no need to render all dom tree
+- Vite: use rollup to bundler - create react use wedpack
 - Compare compiler with bundler
-- stateless & stalefull component 
+- stateless & stalefull component
 - lifecycle
 - declarative && imperative
 
+- React.memo (find out compare old prop with new prop)
+- useMemo
+- useCallback
+- design composition in react/ inheritance
+  Ex: children init insde granparent and pass to parent,
+  Ex
+  <Grandpa>
+  <Parent>
+  <Child></Child>
+  </Parent>
+  </Grandpa>
 
+  Order render:
+  parent > children
 
+  - parent render => children render => children mount => parent mount
+  - abort controller or dung ignore
+
+  - useEffect (no wait layout paint), useLayoutEffect (wait screen paint and run)
+  - ways to pass state from child to parent => 
+    - global store 
+    - render prop
+    - move state manage in context/ ref imperial
+    - move to parent to manage and pass prop
+
+  

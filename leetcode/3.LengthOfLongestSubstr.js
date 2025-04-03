@@ -69,7 +69,6 @@ var lengthOfLongestSubstring3 = (s) => {
       let pre = new Set()
       pre.add(s[i])
       for (let j = i + 1; j < s.length; j++) {
-          // console.log({i, j, pre})
           if (pre.has(s[j])) {
               res = Math.max(pre.size, res)
               break

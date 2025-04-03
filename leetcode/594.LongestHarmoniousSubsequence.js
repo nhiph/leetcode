@@ -24,30 +24,31 @@ var findLHS = function (nums) {
 
 var findLHS1 = function (nums) {
   nums.sort((a, b) => a - b);
+
   let maxLength = 0;
-  // 1,2,2,2,3,3,5,7
 
-  //   for (let left = 0; left < nums.length; left++) {
-  //     let right = left + 1;
-  //     let newLeft = left;
+  for (let left = 0; left < nums.length; left++) {
+    let right = left + 1;
+    let newLeft = left;
 
-  //     while (nums[right] - nums[left] <= 1) {
-  //       if (nums[right] === nums[left]) {
-  //         newLeft = right;
-  //         break;
-  //       }
-  //       maxLength = right - left + 1;
-  //       right++;
-  //       console.log({ left, right, maxLength });
-  //       if (right === nums.length - 1) break;
-  //     }
+    while (nums[right] - nums[left] <= 1) {
+      if (nums[right] === nums[left]) {
+        newLeft = right;
+      }
+      if (nums[right] - nums[left] === 1) {
+        maxLength = Math.max(maxLength, right - left + 1);
+      }
+      right++;
+      if (right === nums.length) break;
+    }
 
-  //     left = newLeft;
-  //   }
+    left = newLeft;
+  }
 
-  //   return maxLength;
+  return maxLength;
 };
 
 console.log(findLHS1([1, 3, 2, 2, 5, 2, 3, 7])); // 5
-// console.log(findLHS1([1, 2, 3, 4])); // 2
-// console.log(findLHS1([1, 1, 1, 1])); // 0
+console.log(findLHS1([1, 2, 3, 4])); // 2
+console.log(findLHS1([1, 1, 1, 1])); // 0
+console.log(findLHS1([1, 4, 1, 3, 1, -14, 1, -13])); // 2
