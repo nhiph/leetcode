@@ -62,29 +62,61 @@ var lengthOfLongestSubstring2 = (s) => {
 // console.log(lengthOfLongestSubstring2("dvdf")); // 3
 
 var lengthOfLongestSubstring3 = (s) => {
-  if (s.length == 1) return 1
+  if (s.length == 1) return 1;
 
-  let res = 0
+  let res = 0;
   for (let i = 0; i < s.length; i++) {
-      let pre = new Set()
-      pre.add(s[i])
-      for (let j = i + 1; j < s.length; j++) {
-          if (pre.has(s[j])) {
-              res = Math.max(pre.size, res)
-              break
-          } else {
-              pre.add(s[j])
-              res = Math.max(pre.size, res)
-          }
+    let pre = new Set();
+    pre.add(s[i]);
+    for (let j = i + 1; j < s.length; j++) {
+      if (pre.has(s[j])) {
+        res = Math.max(pre.size, res);
+        break;
+      } else {
+        pre.add(s[j]);
+        res = Math.max(pre.size, res);
       }
+    }
   }
 
-  return res
+  return res;
 };
-console.log(lengthOfLongestSubstring3("abcb")); // 3
-console.log(lengthOfLongestSubstring3("abcabcbb")); // 3
-console.log(lengthOfLongestSubstring3("bbbbb")); // 1
-console.log(lengthOfLongestSubstring3("pwwkew")); // 3
-console.log(lengthOfLongestSubstring3(" ")); // 1
-console.log(lengthOfLongestSubstring3("aab")); // 2
-console.log(lengthOfLongestSubstring3("dvdf")); // 3
+// console.log(lengthOfLongestSubstring3("abcb")); // 3
+// console.log(lengthOfLongestSubstring3("abcabcbb")); // 3
+// console.log(lengthOfLongestSubstring3("bbbbb")); // 1
+// console.log(lengthOfLongestSubstring3("pwwkew")); // 3
+// console.log(lengthOfLongestSubstring3(" ")); // 1
+// console.log(lengthOfLongestSubstring3("aab")); // 2
+// console.log(lengthOfLongestSubstring3("dvdf")); // 3
+
+var lengthOfLongestSubstring4 = (s) => {
+  if (s.length === 1) return 1;
+
+  let res = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let set = new Set();
+    if (!set.has(s[i])) {
+      set.add(s[i]);
+    }
+    for (let j = i + 1; j < s.length; j++) {
+      if (set.has(s[j])) {
+        res = Math.max(res, set.size);
+        break;
+      } else {
+        set.add(s[j]);
+        res = Math.max(res, set.size);
+      }
+    }
+  }
+
+  return res;
+};
+
+console.log(lengthOfLongestSubstring4("abcb")); // 3
+console.log(lengthOfLongestSubstring4("abcabcbb")); // 3
+console.log(lengthOfLongestSubstring4("bbbbb")); // 1
+console.log(lengthOfLongestSubstring4("pwwkew")); // 3
+console.log(lengthOfLongestSubstring4(" ")); // 1
+console.log(lengthOfLongestSubstring4("aab")); // 2
+console.log(lengthOfLongestSubstring4("dvdf")); // 3

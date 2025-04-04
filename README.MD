@@ -303,4 +303,10 @@ nab codility belt:
     - move state manage in context/ ref imperial
     - move to parent to manage and pass prop
 
-  
+- Questions for React
+
+- 1: event.stopPagination(): prevent child to parent
+- 2: why label have htmlFor: when user click label will refer to relevant input
+- 3: not use key 
+- 4: 2 ways binding, bind value to state, bind onchange to value
+- 5: 

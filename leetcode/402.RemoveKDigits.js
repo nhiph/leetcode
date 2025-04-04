@@ -1,11 +1,12 @@
 var removeKdigits = function (num, k) {
+  if (num.length === k) return "";
+
   let stack = [];
 
   for (let i = 0; i < num.length; i++) {
-    let val = num[i];
+    const val = +num[i];
 
-    // Remove digits from the stack if they are greater than the current digit
-    while (k > 0 && stack.length && stack[stack.length - 1] > val) {
+    while (stack.length && k > 0 && stack[stack.length - 1] > val) {
       stack.pop();
       k--;
     }
@@ -13,23 +14,20 @@ var removeKdigits = function (num, k) {
     stack.push(val);
   }
 
-  // Remove extra digits if k is still > 0
   while (k > 0) {
     stack.pop();
     k--;
   }
 
-  // Remove leading zeros
   while (stack.length && stack[0] === "0") {
     stack.shift();
   }
 
-  // If stack is empty, return "0"
-  return stack.length ? stack.join("") : "0";
+  return Number(stack.join("")).toString();
 };
 
-console.log(removeKdigits("1432219", 3));
-console.log(removeKdigits("10200", 1));
-console.log(removeKdigits("10", 2));
-console.log(removeKdigits("9", 1));
-console.log(removeKdigits("112", 1));
+console.log(removeKdigits("1432219", 3)); // 1219
+console.log(removeKdigits("10200", 1)); // 200
+console.log(removeKdigits("10", 2)); // 0
+console.log(removeKdigits("9", 1)); // 0
+console.log(removeKdigits("112", 1)); // 11

@@ -2,19 +2,15 @@ function asteroidCollision(asteroids) {
   let stack = [];
 
   for (let i = 0; i < asteroids.length; i++) {
+    let peek = stack[stack.length - 1];
     let cur = asteroids[i];
-    let peek = stack[stack?.length - 1] || 0;
 
-    if (!stack.length || peek < 0 || cur > 0) {
+    if (!stack.length || cur > 0 || peek < 0) {
       stack.push(cur);
     } else if (cur + peek === 0) {
-      if (stack.length) {
-        stack.pop();
-      }
-    } else if (Math.abs(peek) < Math.abs(cur)) {
-      if (stack.length) {
-        stack.pop();
-      }
+      stack.pop();
+    } else if (Math.abs(cur) > Math.abs(peek)) {
+      stack.pop();
       i--;
     }
   }

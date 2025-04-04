@@ -1,13 +1,43 @@
+// function solution(N, A) {
+//   let counters = new Array(N).fill(0);
+
+//   for (let i = 0; i < A.length; i++) {
+//     const val = A[i];
+
+//     if (val >= 1 && val <= N) {
+//       counters[val - 1] = counters[val - 1] + 1;
+//     } else if (val === N + 1) {
+//       counters.fill(Math.max(...counters));
+//     }
+//   }
+
+//   return counters;
+// }
+
 function solution(N, A) {
   let counters = new Array(N).fill(0);
+  let maxCounter = 0;
+  let lastMaxUpdate = 0;
 
   for (let i = 0; i < A.length; i++) {
     const val = A[i];
 
     if (val >= 1 && val <= N) {
-      counters[val - 1] = counters[val - 1] + 1;
+      if (counters[val - 1] < lastMaxUpdate) {
+        counters[val - 1] = lastMaxUpdate;
+      }
+      counters[val - 1] += 1;
+      maxCounter = Math.max(maxCounter, counters[val - 1]);
     } else if (val === N + 1) {
-      counters.fill(Math.max(...counters));
+      lastMaxUpdate = maxCounter;
+    }
+  }
+
+  console.log("lastMaxUpdate", lastMaxUpdate);
+
+  for (let i = 0; i < N; i++) {
+    if (counters[i] < lastMaxUpdate) {
+      counters[i] = lastMaxUpdate;
     }
   }
 
