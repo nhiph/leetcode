@@ -297,8 +297,8 @@ nab codility belt:
   - abort controller or dung ignore
 
   - useEffect (no wait layout paint), useLayoutEffect (wait screen paint and run)
-  - ways to pass state from child to parent => 
-    - global store 
+  - ways to pass state from child to parent =>
+    - global store
     - render prop
     - move state manage in context/ ref imperial
     - move to parent to manage and pass prop
@@ -307,6 +307,32 @@ nab codility belt:
 
 - 1: event.stopPagination(): prevent child to parent
 - 2: why label have htmlFor: when user click label will refer to relevant input
-- 3: not use key 
+- 3: not use key
 - 4: 2 ways binding, bind value to state, bind onchange to value
-- 5: 
+- 5:
+
+# 12. Node
+## 12.1 NodeJS
+- JS runtime built on Chrom's V8 engine
+- Event-driven, non-blocking I/O model
+- Fast, scalable, efficient
+- OS Operation, LibUV (async I/O), 
+
+## 12.2 Databse
+- ACID
+  - Atomic
+  - Consistency
+  - Isolation
+  - Durability
+
+- 2 types of DB: SQL & NoSQL
+  - NoSQL: quick & easily scalability => high avialeble but not consistency when distribute traffic during scaling. 
+  - SQL: make sure consistency
+
+  => CAP theorem: trade off when chosing type of database (Consistency | Availability | Partition Tolerence)
+  
+## 12.3 Intergrat React with Nodejs
+
+## 12.4 NodeJS
+
+## 12.5 NodeJS

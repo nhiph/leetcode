@@ -8,11 +8,11 @@ function solution(S, K) {
 
   while (left < right) {
     if (S[left] == "?" || S[right] == "?" || S[left] == S[right]) {
-      if (S[left] != "?") res += S[left];
-      else if (S[right] != "?") res += S[right];
-      else res += "a";
-    } else {
-      count++;
+      if (S[left] != "?") res += S[left]; // abc?
+      else if (S[right] != "?") res += S[right]; // ?abc
+      else res += "a"; // ?xxx? => get a
+    } else { // axxxc, l != r != ?
+      count++; 
       if (count > K) return "NO";
       res += S[left];
     }
