@@ -329,10 +329,33 @@ nab codility belt:
   - NoSQL: quick & easily scalability => high avialeble but not consistency when distribute traffic during scaling. 
   - SQL: make sure consistency
 
-  => CAP theorem: trade off when chosing type of database (Consistency | Availability | Partition Tolerence)
+  => CAP theo rem: trade off when chosing type of database (Consistency | Availability | Partition Tolerence)
   
 ## 12.3 Intergrat React with Nodejs
-
+- React after build become static files, including codebase. 
+- After frontend build, Proxy mechanism & Reverse Proxy (through nginx: roles as a web server, load balancer to distribute your static code to server) to prefer to server in package.json
 ## 12.4 NodeJS
+- Local: FE => PROXY => BE => DB
+- Cloud: 
+  - Before deploy: write docker file and wrap into docker image => help to avoid affects by environment
+  
+=> Every thing is connected by proxy
+- Side car pattern
 
-## 12.5 NodeJS
+## 12.5 Some Middlewares in Express
+- Body Parser: When sending api to BE, the request payload under the type of html || xml || yaml, BE can not read this file => need to parse these types into json like (body parser)
+- Morgan: hanlde log level information like (ERROR, INFO), help a lot in cloud to show log level => Should enable morgan and format type of returned information
+- CORS: preflight
+- Cookie parser: 
+
+- Strategies: Saml, JWT, OAUTH, LDAP, PASSKEY
+- XSS attack, store in cookies will avoid XSS attack
+
+## 12.6 Best Practices
+- Use HTTPs
+- Environment variables fro secrets
+- Valid input thoroughly
+- Use secure cookies
+
+
+keyworks: OSI model, harshicorp
